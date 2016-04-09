@@ -1,22 +1,22 @@
 package com.giangnd_svmc.ha18.ui.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+=======
+>>>>>>> origin/master
 
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseActivity;
 import com.giangnd_svmc.ha18.app.BaseFragment;
-import com.giangnd_svmc.ha18.entity.Student;
 
 import java.util.ArrayList;
 
