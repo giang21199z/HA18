@@ -7,6 +7,7 @@ public class Student {
     public int id;
     public String name;
     public int attendance;
+    public String imageURL="";
 
     public Student(String name) {
         this.name = name;

@@ -2,6 +2,7 @@ package com.giangnd_svmc.ha18.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,11 +13,7 @@ import com.giangnd_svmc.ha18.R;
  * Created by Manh on 4/9/16.
  */
 
-<<<<<<< HEAD:app/src/main/java/com/giangnd_svmc/ha18/ui/activity/LoginActivity.java
-public class LoginActivity extends AppCompatActivity {
-=======
-public class LoginFragment extends Activity {
->>>>>>> origin/master:app/src/main/java/com/giangnd_svmc/ha18/ui/fragment/LoginFragment.java
+class LoginFragment extends Activity {
     EditText editUsername;
     EditText editPassword;
     Button buttonLogin;

@@ -79,7 +79,7 @@ public class ListClassFragment extends BaseFragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             MyViewHolder myViewHolder;
             if (convertView == null) {
-                convertView = inflater.inflate(R.layout.item_teacher, null);
+                convertView = inflater.inflate(R.layout.item_student, null);
                 myViewHolder = new MyViewHolder();
                 convertView.setTag(myViewHolder);
             } else {

@@ -24,9 +24,10 @@
             android:layout_marginLeft="@dimen/margin_20">
 
             <ImageView
+                android:id="@+id/imageStudent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/h" />
+                android:src="@drawable/account2" />
         </LinearLayout>
 
         <LinearLayout

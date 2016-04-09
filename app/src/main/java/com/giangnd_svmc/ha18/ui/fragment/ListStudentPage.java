@@ -7,15 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseActivity;
 import com.giangnd_svmc.ha18.app.BasePage;
 import com.giangnd_svmc.ha18.entity.Student;
+import com.giangnd_svmc.ha18.glide.GlideCircleTransform;
 
 import java.util.ArrayList;
 
@@ -41,7 +44,8 @@ public class ListStudentPage extends BasePage {
         listStudent.add(a);
         adapter = new ListAdapter(activity, listStudent);
         listView.setAdapter(adapter);
-        Toast.makeText(activity, listStudent.get(0).name, Toast.LENGTH_SHORT).show();    }
+        Toast.makeText(activity, listStudent.get(0).name, Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     protected int getContentId() {
@@ -87,6 +91,8 @@ public class ListStudentPage extends BasePage {
             myViewHolder.tvName = (TextView) convertView.findViewById(R.id.tv_Name);
             myViewHolder.tvAttendance = (TextView) convertView.findViewById(R.id.tv_Attendance);
             myViewHolder.cvAttendance = (CardView) convertView.findViewById(R.id.cv_Attendance);
+            myViewHolder.imageStudent = (ImageView) convertView.findViewById(R.id.imageStudent);
+            myViewHolder.tvName.setText(studentArrayList.get(position).name);
             switch (studentArrayList.get(position).attendance) {
                 case 0:
                     myViewHolder.cvAttendance.setCardBackgroundColor(activity.getResources().getColor(R.color.colorAbsent));
@@ -98,14 +104,21 @@ public class ListStudentPage extends BasePage {
                     myViewHolder.tvAttendance.setText("Present");
                     break;
                 case 2:
-                    myViewHolder.cvAttendance.setCardBackgroundColor(R.color.colorUnrecorded);
+                    myViewHolder.cvAttendance.setCardBackgroundColor(activity.getResources().getColor(R.color.colorUnrecorded));
                     myViewHolder.tvAttendance.setText("Unrecorded");
                     break;
             }
+            Glide.with(activity.getBaseContext())
+                    .load(studentArrayList.get(position).imageURL)
+                    .centerCrop()
+                    .transform(new GlideCircleTransform(activity.getBaseContext()))
+                    .error(R.drawable.account)
+                    .into(myViewHolder.imageStudent);
             return convertView;
         }
 
         private class MyViewHolder {
+            ImageView imageStudent;
             TextView tvName;
             CardView cvAttendance;
             TextView tvAttendance;
