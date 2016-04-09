@@ -1,4 +1,4 @@
-package com.giangnd_svmc.ha18.ui.fragment;
+package com.giangnd_svmc.ha18.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +12,7 @@ import com.giangnd_svmc.ha18.R;
  * Created by Manh on 4/9/16.
  */
 
-public class LoginFragment extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     EditText editUsername;
     EditText editPassword;
     Button buttonLogin;

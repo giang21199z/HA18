@@ -6,6 +6,7 @@ package com.giangnd_svmc.ha18.entity;
 public class Student {
     public int id;
     public String name;
+    public int attendance;
 
     public Student(String name) {
         this.name = name;

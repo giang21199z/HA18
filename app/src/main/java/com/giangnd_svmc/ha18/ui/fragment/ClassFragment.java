@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.giangnd_svmc.ha18.R;
@@ -21,10 +23,12 @@ import java.util.ArrayList;
 /**
  * Created by admin on 4/9/2016.
  */
-public class ClassFragment extends BaseFragment {
+public class ClassFragment extends BaseFragment implements View.OnClickListener {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private MyViewPagerAdapter adapter;
+    private EditText edSearch;
+    private LinearLayout btnResetText, btnSearch;
 
     @Override
     protected int getLayoutResIdContentView() {
@@ -35,14 +39,25 @@ public class ClassFragment extends BaseFragment {
     protected void onCreateContentView(View rootView, Bundle savedInstanceState) {
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
         viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
+        edSearch = (EditText) rootView.findViewById(R.id.searchView);
+        btnSearch = (LinearLayout) rootView.findViewById(R.id.btn_Search);
+        btnSearch.setOnClickListener(this);
         ArrayList<ListStudentPage> listStudentPages = new ArrayList<>();
         ListStudentPage listStudentPage = new ListStudentPage(getBaseActivity());
         listStudentPages.add(listStudentPage);
         ListStudentPage listStudentPagse = new ListStudentPage(getBaseActivity());
         listStudentPages.add(listStudentPagse);
-        adapter = new MyViewPagerAdapter(getBaseActivity(),listStudentPages);
+        adapter = new MyViewPagerAdapter(getBaseActivity(), listStudentPages);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id==R.id.btn_Search){
+
+        }
     }
 
     class MyViewPagerAdapter extends PagerAdapter {
@@ -50,6 +65,7 @@ public class ClassFragment extends BaseFragment {
 
         public MyViewPagerAdapter(BaseActivity activity, ArrayList<ListStudentPage> list) {
             listPage = list;
+
         }
 
         @Override
