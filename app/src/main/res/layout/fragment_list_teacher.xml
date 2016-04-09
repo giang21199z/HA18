@@ -1,20 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.giangnd_svmc.ha18.app.FractionFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical">
 
-    <SearchView
-        android:id="@+id/searchview"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/margin_80" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textview_numberOfTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number of teacher: "
+            android:layout_marginLeft="@dimen/margin_10"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_6"
+            android:layout_marginRight="@dimen/margin_6"
+            android:layout_marginTop="@dimen/margin_3">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_60"
+                card_view:cardBackgroundColor="#fff"
+                card_view:cardCornerRadius="@dimen/margin_3"
+                card_view:cardElevation="@dimen/margin_2"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:weightSum="100">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="87"
+                        android:weightSum="100">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/searchView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="88"
+                            android:background="#fff"
+
+                            android:hint="Search.."
+                            android:paddingLeft="@dimen/margin_20"
+                            android:singleLine="true" />
+
+                        <LinearLayout
+                            android:id="@+id/btn_reset_Text"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="12"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/margin_30"
+                                android:layout_height="@dimen/margin_30"
+                                android:src="@drawable/close" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_Search"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="12.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_30"
+                            android:layout_height="@dimen/margin_30"
+                            android:src="@drawable/search" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
 
         <ListView
             android:id="@+id/listview_teacher"
@@ -22,7 +96,6 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"></ListView>
-    </FrameLayout>
+    </LinearLayout>
 
-
-</LinearLayout>
+</com.giangnd_svmc.ha18.app.FractionFrameLayout>
