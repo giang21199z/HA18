@@ -94,9 +94,13 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         JSONObject jobj = (JSONObject) jsonObject.getJSONArray(MyUtils.TAG_TEACHER).get(0);
                         Teacher teacher = new Teacher();
                         teacher.id = jobj.getInt(MyUtils.TAG_TEACHER_ID);
-                        teacher.name= jobj.getString(MyUtils.TAG_TEACHER_NAME);
+                        teacher.name = jobj.getString(MyUtils.TAG_TEACHER_NAME);
+                        teacher.address = jobj.getString(MyUtils.TAG_TEACHER_ADDRESS);
+                        teacher.email = jobj.getString(MyUtils.TAG_TEACHER_EMAIL);
+                        teacher.phone = jobj.getString(MyUtils.TAG_TEACHER_PHONE);
+                        teacher.setURL(jobj.getString(MyUtils.TAG_TEACHER_IMAGES));
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        intent.putExtra("teacher",teacher);
+                        intent.putExtra(MyUtils.TAG_TEACHER, teacher);
                         startActivity(intent);
                     } else {
                         Snackbar.make(getCurrentFocus(), "FAIL", Snackbar.LENGTH_LONG).show();

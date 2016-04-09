@@ -1,6 +1,8 @@
 package com.giangnd_svmc.ha18.ui.activity;
 
 import android.app.FragmentManager;
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseActivity;
 import com.giangnd_svmc.ha18.app.BaseFragment;
+import com.giangnd_svmc.ha18.entity.MyUtils;
+import com.giangnd_svmc.ha18.entity.Teacher;
 import com.giangnd_svmc.ha18.ui.fragment.ClassFragment;
 import com.giangnd_svmc.ha18.ui.fragment.ListClassFragment;
 
@@ -22,12 +26,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public TextView mTitle;
     public DrawerLayout drawer;
     private NavigationView navigationView;
+    public Teacher teacher = new Teacher();
 
     @Override
     protected void onCreateContentView() {
         setupToolBar();
         setupMenu();
         setLockMenu(true);
+        teacher = (Teacher) getIntent().getSerializableExtra(MyUtils.TAG_TEACHER);
+
+
     }
 
     public void closeMenu() {
@@ -91,7 +99,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     protected BaseFragment getFragmentContent() {
-        return new ClassFragment();
+        return new ListClassFragment(teacher);
     }
 
     @Override

@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseActivity;
 import com.giangnd_svmc.ha18.app.BaseFragment;
+import com.giangnd_svmc.ha18.entity.MyClass;
+import com.giangnd_svmc.ha18.entity.Teacher;
 
 import java.util.ArrayList;
 
@@ -24,6 +26,13 @@ public class ClassFragment extends BaseFragment implements View.OnClickListener 
     private MyViewPagerAdapter adapter;
     private EditText edSearch;
     private LinearLayout btnResetText, btnSearch;
+    private Teacher teacher;
+    private MyClass myClass;
+
+    public ClassFragment(Teacher teacher, MyClass myClass) {
+        this.teacher = teacher;
+        this.myClass = myClass;
+    }
 
     @Override
     protected int getLayoutResIdContentView() {
@@ -50,7 +59,7 @@ public class ClassFragment extends BaseFragment implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id==R.id.btn_Search){
+        if (id == R.id.btn_Search) {
 
         }
     }
