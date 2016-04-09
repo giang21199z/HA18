@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseActivity;
 import com.giangnd_svmc.ha18.app.BaseFragment;
+import com.giangnd_svmc.ha18.ui.fragment.MyClassesFragment;
 
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -89,7 +90,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     protected BaseFragment getFragmentContent() {
-        return null;
+        return new MyClassesFragment();
     }
 
     @Override
