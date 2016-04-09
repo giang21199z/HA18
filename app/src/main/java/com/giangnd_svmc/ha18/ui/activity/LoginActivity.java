@@ -102,6 +102,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra(MyUtils.TAG_TEACHER, teacher);
                         startActivity(intent);
+                        finish();
                     } else {
                         Snackbar.make(getCurrentFocus(), "FAIL", Snackbar.LENGTH_LONG).show();
                     }

@@ -1,20 +1,23 @@
 package com.giangnd_svmc.ha18.entity;
 
 /**
- * Created by admin on 4/9/2016.
+ * Created by admin on 4/10/2016.
  */
-public class Student {
+public class Attendences {
     public int id;
-    public String name;
-    public String code;
-    public String birthDay;
-    public String address;
-    public String description;
+    public int status;
+    public int student_id;
+    public String student_code;
+    public String student_name;
     private String image;
+
     public void setImageStudent(String imageStudent) {
-        image = imageStudent;
+        this.image = imageStudent;
     }
+
     public String getImageStudent() {
         return "http://192.168.11.1/TS/images/" + image;
     }
+
+
 }
