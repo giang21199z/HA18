@@ -1,7 +1,7 @@
 package com.giangnd_svmc.ha18.ui.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,11 +12,11 @@ import com.giangnd_svmc.ha18.R;
  * Created by Manh on 4/9/16.
  */
 
-public class LoginFragment extends AppCompatActivity {
+public class LoginFragment extends Activity {
     EditText editUsername;
     EditText editPassword;
     Button buttonLogin;
-    
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
