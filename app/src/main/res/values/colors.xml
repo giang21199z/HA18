@@ -5,7 +5,7 @@
     <color name="colorPrimaryLight">#a15eef</color>
 <color name="transparent">#00ffffff</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorBackground">#eaeaea</color>
+    <color name="colorBackground">#f7f7f7</color>
     <color name="colorPresent">#48de50</color>
     <color name="colorAbsent">#f45462</color>
     <color name="colorUnrecorded">#b7b7b7</color>

@@ -1,7 +1,7 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
 
-//////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////
     <dimen name="margin_1">1dp</dimen>
     <dimen name="margin_2">2dp</dimen>
     <dimen name="margin_3">3dp</dimen>
@@ -102,12 +102,14 @@
     <dimen name="margin_98">98dp</dimen>
     <dimen name="margin_99">99dp</dimen>
     <dimen name="margin_100">100dp</dimen>
-    <dimen name="margin_150">150dp</dimen>
+    <dimen name="margin_130">130dp</dimen>
 
+    <dimen name="margin_150">150dp</dimen>
+    <dimen name="margin_200">200dp</dimen>
 
 
     ////////////////////////////////////////////////////////////////////
-  
+
     <dimen name="text_size_10">10sp</dimen>
     <dimen name="text_size_11">11sp</dimen>
     <dimen name="text_size_12">12sp</dimen>
@@ -150,7 +152,7 @@
     <dimen name="text_size_49">49sp</dimen>
     <dimen name="text_size_50">50sp</dimen>
 
-///////////////////////////
+    ///////////////////////////
     <dimen name="margin_300">300dp</dimen>
     <dimen name="margin_450">450dp</dimen>
 </resources>
