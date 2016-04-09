@@ -1,7 +1,9 @@
-package com.giangnd_svmc.ha18;
+package com.giangnd_svmc.ha18.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.giangnd_svmc.ha18.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //afaf
+        
     }
 }
