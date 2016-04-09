@@ -12,21 +12,21 @@ import android.widget.Toast;
 
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseFragment;
-import com.giangnd_svmc.ha18.entity.MyClass;
+import com.giangnd_svmc.ha18.entity.Student;
 
 import java.util.ArrayList;
 
 /**
  * Created by admin on 4/9/2016.
  */
-public class MyClassesFragment extends BaseFragment {
+public class ListClassFragment extends BaseFragment {
     private GridView gridView;
     private MyAdapter adapter;
-    private ArrayList<MyClass> listClass = new ArrayList<>();
+    private ArrayList<Student> listClass = new ArrayList<>();
 
     @Override
     protected int getLayoutResIdContentView() {
-        return R.layout.fragment_class;
+        return R.layout.fragment_list_class;
     }
 
     @Override
@@ -38,11 +38,11 @@ public class MyClassesFragment extends BaseFragment {
     @Override
     protected void onCreateContentView(View rootView, Bundle savedInstanceState) {
         gridView = (GridView) rootView.findViewById(R.id.gridView);
-        listClass.add(new MyClass("name"));
-        listClass.add(new MyClass("name"));
-        listClass.add(new MyClass("name"));
-        listClass.add(new MyClass("name"));
-        listClass.add(new MyClass("name"));
+        listClass.add(new Student("name"));
+        listClass.add(new Student("name"));
+        listClass.add(new Student("name"));
+        listClass.add(new Student("name"));
+        listClass.add(new Student("name"));
         adapter = new MyAdapter(getActivity(), listClass);
         gridView.setAdapter(adapter);
         Toast.makeText(getActivity(), listClass.get(0).name, Toast.LENGTH_SHORT).show();
@@ -51,10 +51,10 @@ public class MyClassesFragment extends BaseFragment {
 
     private class MyAdapter extends BaseAdapter {
         Context mContext;
-        ArrayList<MyClass> classArrayList;
+        ArrayList<Student> classArrayList;
         LayoutInflater inflater;
 
-        public MyAdapter(Context context, ArrayList<MyClass> categories) {
+        public MyAdapter(Context context, ArrayList<Student> categories) {
             this.mContext = context;
             this.classArrayList = categories;
             inflater = LayoutInflater.from(this.mContext);
