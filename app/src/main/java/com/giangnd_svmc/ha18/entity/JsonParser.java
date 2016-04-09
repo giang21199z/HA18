@@ -1,5 +1,7 @@
 package com.giangnd_svmc.ha18.entity;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +26,8 @@ public class JsonParser {
             URL url = new URL(myURL);
             connection = (HttpURLConnection) url.openConnection();
             connection.connect();
+
+
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
             StringBuilder stringBuilder = new StringBuilder();
@@ -34,15 +38,14 @@ public class JsonParser {
 
             String fromSever = stringBuilder.toString();
             JSONObject jsonObjectFromSever = new JSONObject(fromSever);
+
             return jsonObjectFromSever;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (ProtocolException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         } catch (JSONException e) {
             e.printStackTrace();
+            return null;
         } finally {
             if (connection != null) connection.disconnect();
             try {
@@ -51,6 +54,5 @@ public class JsonParser {
                 e.printStackTrace();
             }
         }
-        return null;
     }
 }

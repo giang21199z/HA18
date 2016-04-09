@@ -1,78 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margin_30"
-        android:text="Teacher"
-        android:textColor="#fff"
-        android:textSize="@dimen/text_size_50" />
+    android:background="@color/colorPrimary"
+>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/margin_25"
-        android:paddingRight="@dimen/margin_25"
-        android:paddingTop="@dimen/margin_60">
-
-        <TextView
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-            android:hint="username"
-            android:text="Username:"
-            android:textColor="#fff"
-            android:textSize="@dimen/text_size_18" />
-
-        <EditText
-            android:id="@+id/editUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="username"
-            android:paddingLeft="@dimen/margin_10"
-
-            android:textColorHint="@color/colorBackground" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password:"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_30"
+            android:text="Teacher"
             android:textColor="#fff"
-            android:textSize="@dimen/text_size_18" />
+            android:textSize="@dimen/text_size_50" />
 
-        <EditText
-            android:id="@+id/editPassword"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="password"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_25"
+            android:paddingRight="@dimen/margin_25"
+            android:paddingTop="@dimen/margin_60">
 
-            android:inputType="textPassword"
-            android:paddingLeft="@dimen/margin_10"
-            android:textColorHint="@color/colorBackground" />
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:hint="username"
+                android:text="Username:"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_size_18" />
+
+            <EditText
+                android:id="@+id/editUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="username"
+                android:paddingLeft="@dimen/margin_10"
+
+                android:textColorHint="@color/colorBackground" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_size_18" />
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="password"
+
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/margin_10"
+                android:textColorHint="@color/colorBackground" />
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/buttonLogin"
+            android:layout_width="@dimen/margin_100"
+            android:layout_height="@dimen/margin_40"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_30"
+            android:text="Login"
+            card_view:cardBackgroundColor="#fff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="LOGIN"
+                android:textColor="@color/colorPrimaryDark" />
+        </android.support.v7.widget.CardView>
     </LinearLayout>
-
-    <android.support.v7.widget.CardView
-
-        android:id="@+id/buttonLogin"
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_centerInParent="true"
         android:layout_width="@dimen/margin_100"
-        android:layout_height="@dimen/margin_40"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margin_30"
-        android:text="Login">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="LOGIN"
-            android:textColor="@color/colorPrimaryDark" />
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+        android:layout_height="@dimen/margin_100" />
+</RelativeLayout>
