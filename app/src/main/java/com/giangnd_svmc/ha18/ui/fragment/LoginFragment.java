@@ -32,13 +32,12 @@ public class LoginFragment extends Activity {
         });
     }
 
-    private void onClickLogin(){
+    private void onClickLogin() {
         String username = editUsername.getText().toString();
         String passwod = editPassword.getText().toString();
-        if(true){
+        if (true) {
 
-        }
-        else{
+        } else {
 
         }
     }

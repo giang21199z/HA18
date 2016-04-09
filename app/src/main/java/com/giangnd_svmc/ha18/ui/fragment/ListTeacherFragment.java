@@ -6,27 +6,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseFragment;
-import com.giangnd_svmc.ha18.entity.Student;
+import com.giangnd_svmc.ha18.entity.Teacher;
 
 import java.util.ArrayList;
 
 /**
- * Created by admin on 4/9/2016.
+ * Created by Manh on 4/9/16.
  */
-public class ListClassFragment extends BaseFragment {
-    private GridView gridView;
+public class ListTeacherFragment extends BaseFragment {
+    private ListView listView;
     private MyAdapter adapter;
-    private ArrayList<Student> listClass = new ArrayList<>();
+    private ArrayList<Teacher> listTeacher = new ArrayList<>();
 
     @Override
     protected int getLayoutResIdContentView() {
-        return R.layout.fragment_list_class;
+        return R.layout.fragment_list_teacher;
     }
 
     @Override
@@ -37,32 +37,26 @@ public class ListClassFragment extends BaseFragment {
 
     @Override
     protected void onCreateContentView(View rootView, Bundle savedInstanceState) {
-        gridView = (GridView) rootView.findViewById(R.id.gridView);
-        listClass.add(new Student("name"));
-        listClass.add(new Student("name"));
-        listClass.add(new Student("name"));
-        listClass.add(new Student("name"));
-        listClass.add(new Student("name"));
-        adapter = new MyAdapter(getActivity(), listClass);
-        gridView.setAdapter(adapter);
-        Toast.makeText(getActivity(), listClass.get(0).name, Toast.LENGTH_SHORT).show();
-
+        listView = (ListView) rootView.findViewById(R.id.listview_teacher);
+        adapter = new MyAdapter(getActivity(), listTeacher);
+        listView.setAdapter(adapter);
+        Toast.makeText(getActivity(), listTeacher.get(0).getName(), Toast.LENGTH_SHORT).show();
     }
 
     private class MyAdapter extends BaseAdapter {
         Context mContext;
-        ArrayList<Student> classArrayList;
+        ArrayList<Teacher> teacherArrayList;
         LayoutInflater inflater;
 
-        public MyAdapter(Context context, ArrayList<Student> categories) {
+        public MyAdapter(Context context, ArrayList<Teacher> list) {
             this.mContext = context;
-            this.classArrayList = categories;
+            this.teacherArrayList = list;
             inflater = LayoutInflater.from(this.mContext);
         }
 
         @Override
         public int getCount() {
-            return classArrayList.size();
+            return teacherArrayList.size();
         }
 
         @Override
@@ -85,14 +79,13 @@ public class ListClassFragment extends BaseFragment {
             } else {
                 myViewHolder = (MyViewHolder) convertView.getTag();
             }
-            myViewHolder.tvClassName = (TextView) convertView.findViewById(R.id.tv_ClassName);
+            myViewHolder.textviewTeacherName = (TextView) convertView.findViewById(R.id.textview_teacher);
 
-            myViewHolder.tvClassName.setText(classArrayList.get(position).name);
+            myViewHolder.textviewTeacherName.setText(teacherArrayList.get(position).getName());
             return convertView;
         }
-
         private class MyViewHolder {
-            TextView tvClassName;
+            TextView textviewTeacherName;
         }
     }
 }
