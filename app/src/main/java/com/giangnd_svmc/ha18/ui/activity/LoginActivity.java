@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.entity.JsonParser;
 import com.giangnd_svmc.ha18.entity.MyUtils;
+import com.giangnd_svmc.ha18.entity.Teacher;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,8 +91,13 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 try {
                     int success = jsonObject.getInt(MyUtils.TAG_SUCCESS);
                     if (success == 1) {
-                        Intent intent= new Intent(this,MainActivity.class);
-                        finish();
+                        JSONObject jobj = (JSONObject) jsonObject.getJSONArray(MyUtils.TAG_TEACHER).get(0);
+                        Teacher teacher = new Teacher();
+                        teacher.id = jobj.getInt(MyUtils.TAG_TEACHER_ID);
+                        teacher.name= jobj.getString(MyUtils.TAG_TEACHER_NAME);
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("teacher",teacher);
+                        startActivity(intent);
                     } else {
                         Snackbar.make(getCurrentFocus(), "FAIL", Snackbar.LENGTH_LONG).show();
                     }
