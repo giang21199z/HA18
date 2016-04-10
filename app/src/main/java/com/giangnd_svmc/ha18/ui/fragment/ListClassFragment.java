@@ -39,6 +39,10 @@ public class ListClassFragment extends BaseFragment implements AdapterView.OnIte
 
     public ListClassFragment(Teacher teacher) {
         this.teacher = teacher;
+
+    }
+    public ListClassFragment(){
+
     }
 
     @Override
@@ -54,11 +58,20 @@ public class ListClassFragment extends BaseFragment implements AdapterView.OnIte
     @Override
     protected void onCreateContentView(View rootView, Bundle savedInstanceState) {
         gridView = (GridView) rootView.findViewById(R.id.gridView);
-        listClass= new ArrayList<>();
+        listClass = new ArrayList<>();
         adapter = new MyAdapter(getActivity(), listClass);
         gridView.setAdapter(adapter);
-        new LoadClass().execute();
         gridView.setOnItemClickListener(this);
+        new LoadClass().execute();
+        final MainActivity activity = (MainActivity) getActivity();
+        activity.toolbar.setTitle(teacher.name);
+        activity.toolbar.setNavigationIcon(R.drawable.menu);
+        activity.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.openMenu();
+            }
+        });
     }
 
     @Override

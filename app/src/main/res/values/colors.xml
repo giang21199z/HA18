@@ -9,5 +9,6 @@
     <color name="colorPresent">#48de50</color>
     <color name="colorAbsent">#f45462</color>
     <color name="colorUnrecorded">#b7b7b7</color>
+    <color name="white">#fff</color>
 
 </resources>

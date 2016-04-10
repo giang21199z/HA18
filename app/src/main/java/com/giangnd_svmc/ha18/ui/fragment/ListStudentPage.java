@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,7 +36,7 @@ import java.util.ArrayList;
 /**
  * Created by admin on 4/9/2016.
  */
-public class ListAttendencesPage extends BasePage {
+public class ListStudentPage extends BasePage implements AdapterView.OnItemClickListener {
     private ListView listView;
     private ListAdapter adapter;
     private Teacher teacher;
@@ -43,7 +44,7 @@ public class ListAttendencesPage extends BasePage {
     private Subject subject;
     private ArrayList<Student> listStudent = new ArrayList<>();
 
-    public ListAttendencesPage(BaseActivity activity, Teacher teacher, MyClass myClass, Subject subject) {
+    public ListStudentPage(BaseActivity activity, Teacher teacher, MyClass myClass, Subject subject) {
         super(activity);
         this.teacher = teacher;
         this.myClass = myClass;
@@ -56,6 +57,7 @@ public class ListAttendencesPage extends BasePage {
         listStudent = new ArrayList<>();
         adapter = new ListAdapter(activity, listStudent);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
         loadData();
     }
 
@@ -66,6 +68,11 @@ public class ListAttendencesPage extends BasePage {
 
     public void loadData() {
         new LoadAttendences().execute();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
     }
 
     class LoadAttendences extends AsyncTask {
@@ -107,20 +114,6 @@ public class ListAttendencesPage extends BasePage {
                             student.setImageStudent(jsonObject.getString(MyUtils.TAG_STUDIENT_IMAGE));
                             listStudent.add(student);
                         }
-
-//                        JSONArray arr = jsonObject.getJSONArray(MyUtils.TAG_ATTENDENCES);
-//                        Log.e("TAG", arr.length() + "", null);
-//                        for (int i = 0; i < arr.length(); i++) {
-//                            Attendences attendence = new Attendences();
-//                            JSONObject jsonObject = (JSONObject) arr.get(i);
-//                            attendence.id = jsonObject.getInt(MyUtils.TAG_ATTENDENCES_ID);
-//                            attendence.status = jsonObject.getInt(MyUtils.TAG_ATTENDENCES_STATUS);
-//                            attendence.student_id = jsonObject.getInt(MyUtils.TAG_ATTENDENCES_STUDENT_ID);
-//                            attendence.student_code = jsonObject.getString(MyUtils.TAG_ATTENDENCES_STUDENT_CODE);
-//                            attendence.student_name = jsonObject.getString(MyUtils.TAG_ATTENDENCES_STUDENT_NAME);
-//                            attendence.setImageStudent(jsonObject.getString(MyUtils.TAG_ATTENDENCES_STUDENT_IMAGE));
-//                            listAttendences.add(attendence);
-//                        }
                     } else {
                     }
                 } catch (JSONException e) {
@@ -173,21 +166,6 @@ public class ListAttendencesPage extends BasePage {
             myViewHolder.imageStudent = (ImageView) convertView.findViewById(R.id.imageStudent);
             myViewHolder.tvName.setText(listStudent.get(position).name);
             myViewHolder.cvAttendance.setVisibility(View.GONE);
-//            switch (attendencesArrayList.get(position).status) {
-//                case 0:
-//                    myViewHolder.cvAttendance.setCardBackgroundColor(activity.getResources().getColor(R.color.colorAbsent));
-//                    myViewHolder.tvAttendance.setText("Absent");
-//                    break;
-//                case 1:
-//                    myViewHolder.cvAttendance.setCardBackgroundColor(activity.getResources().getColor(R.color.colorPresent));
-//
-//                    myViewHolder.tvAttendance.setText("Present");
-//                    break;
-//                case 2:
-//                    myViewHolder.cvAttendance.setCardBackgroundColor(activity.getResources().getColor(R.color.colorUnrecorded));
-//                    myViewHolder.tvAttendance.setText("Unrecorded");
-//                    break;
-//            }
             Glide.with(activity.getBaseContext())
                     .load(listStudent.get(position).getImageStudent())
                     .centerCrop()

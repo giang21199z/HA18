@@ -44,12 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (fragmentManager != null) {
             BaseFragment currentFragment = getCurrentFragment();
             if (currentFragment != null) {
-                {
-                    if (fragmentManager.getBackStackEntryCount() == 0) super.onBackPressed();
-                    else
-                        currentFragment.onBackPressed();
-
-                }
+                currentFragment.onBackPressed();
             } else {
                 super.onBackPressed();
             }
