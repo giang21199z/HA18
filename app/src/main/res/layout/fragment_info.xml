@@ -8,7 +8,6 @@
     android:orientation="vertical">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_150"
@@ -34,229 +33,127 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_10"
-            android:orientation="vertical">
+            android:layout_marginLeft="@dimen/margin_10"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/margin_20">
 
             <TextView
+                android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_20"
                 android:singleLine="true"
                 android:text="Nguyễn Ngọc Anh"
                 android:textColor="#fff"
                 android:textSize="@dimen/text_size_23" />
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cv_Attendance"
+            <TextView
+                android:id="@+id/tv_MSV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MSV"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_23" />
 
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/margin_35"
-                android:layout_marginLeft="@dimen/margin_20"
-                android:layout_marginRight="@dimen/margin_20"
-                card_view:cardBackgroundColor="@color/colorPresent"
-                card_view:cardCornerRadius="@dimen/margin_3"
-                card_view:cardElevation="0dp"
 
-                card_view:cardUseCompatPadding="true">
-
-                <TextView
-                    android:id="@+id/tv_Attendance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Present"
-                    android:textColor="#fff"
-                    android:textSize="@dimen/margin_18"
-                    android:textStyle="bold" />
-            </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 
-    <android.support.v7.widget.CardView
-
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_70"
-        android:layout_marginLeft="@dimen/margin_10"
-        android:layout_marginRight="@dimen/margin_10"
-        android:layout_marginTop="@dimen/margin_10"
-        card_view:cardBackgroundColor="#fff"
-        card_view:cardCornerRadius="@dimen/margin_3"
-        card_view:cardElevation="@dimen/margin_2"
-        card_view:cardUseCompatPadding="true">
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_12"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BirhDay"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_20" />
+
+        <TextView
+            android:id="@+id/tv_Birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:text="BirhDay"
+            android:textColor="#212121"
+            android:textSize="@dimen/text_size_20" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="100">
+            android:layout_height="@dimen/margin_1"
+            android:layout_margin="@dimen/margin_8"
+            android:background="#212121"></LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20"
-                android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_20" />
 
-                <ImageView
-                    android:layout_width="@dimen/margin_40"
-                    android:layout_height="@dimen/margin_40"
-                    android:src="@drawable/account_check" />
-            </LinearLayout>
+        <TextView
+            android:id="@+id/tv_Address"
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="80"
-                android:weightSum="100">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="45"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present"
-                        android:textColor="@color/colorPresent"
-                        android:textSize="@dimen/margin_18" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="25"
-                        android:textColor="@color/colorPresent"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="45"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Present"
-                        android:textColor="@color/colorAbsent"
-                        android:textSize="@dimen/margin_18" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="15"
-                        android:textColor="@color/colorAbsent"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="@dimen/margin_30"
-                        android:layout_height="@dimen/margin_30"
-                        android:src="@drawable/chevron_right" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_70"
-        android:layout_marginLeft="@dimen/margin_10"
-        android:layout_marginRight="@dimen/margin_10"
-        card_view:cardBackgroundColor="#fff"
-        card_view:cardCornerRadius="@dimen/margin_3"
-        card_view:cardElevation="@dimen/margin_2"
-        card_view:cardUseCompatPadding="true">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:text="BirhDay"
+            android:textColor="#212121"
+            android:textSize="@dimen/text_size_20" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="100">
+            android:layout_height="@dimen/margin_1"
+            android:layout_margin="@dimen/margin_8"
+            android:background="#212121"></LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20"
-                android:gravity="center">
 
-                <ImageView
-                    android:layout_width="@dimen/margin_30"
-                    android:layout_height="@dimen/margin_30"
-                    android:layout_marginRight="@dimen/margin_5"
-                    android:src="@drawable/hand2" />
-            </LinearLayout>
+        <TextView
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="80"
-                android:weightSum="100">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_20" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="45"
-                    android:gravity="center"
-                    android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_Phone"
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Positive"
-                        android:textColor="@color/colorPresent"
-                        android:textSize="@dimen/margin_18" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:text="BirhDay"
+            android:textColor="#212121"
+            android:textSize="@dimen/text_size_20" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="11"
-                        android:textColor="@color/colorPresent"
-                        android:textStyle="bold" />
-                </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_1"
+            android:layout_margin="@dimen/margin_8"
+            android:background="#212121"></LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="45"
-                    android:gravity="center"
-                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Negative"
-                        android:textColor="@color/colorAbsent"
-                        android:textSize="@dimen/margin_18" />
+        <TextView
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="15"
-                        android:textColor="@color/colorAbsent"
-                        android:textStyle="bold" />
-                </LinearLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_20" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="10"
-                    android:gravity="center">
+        <TextView
+            android:id="@+id/tv_Description"
 
-                    <ImageView
-                        android:layout_width="@dimen/margin_30"
-                        android:layout_height="@dimen/margin_30"
-                        android:src="@drawable/chevron_right" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:text="BirhDay"
+            android:textColor="#212121"
+            android:textSize="@dimen/text_size_20" />
+    </LinearLayout>
+
 
 </LinearLayout>

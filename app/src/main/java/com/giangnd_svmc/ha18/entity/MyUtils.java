@@ -13,9 +13,10 @@ public class MyUtils {
     public static final String TAG_TEACHER_EMAIL = "email";
     public static final String TAG_TEACHER_ADDRESS = "address";
     public static final String TAG_TEACHER_IMAGES = "images";
+    public static final String MY_IP = "http://192.168.43.45/";
 
     public static String urlLoginTeacher(String username, String password) {
-        return "http://192.168.11.1/TS/teacher/api.php?loginteacher=true&user=" + username + "&" + "pass=" + password;
+        return MY_IP + "TS/teacher/api.php?loginteacher=true&user=" + username + "&" + "pass=" + password;
     }
 
     //---
@@ -24,7 +25,7 @@ public class MyUtils {
     public static final String TAG_CLASS_NAME = "name";
 
     public static String urlListClass(int idTeacher) {
-        return "http://192.168.11.1/TS/teacher/api.php?getallclass=true&idteacher=" + idTeacher;
+        return MY_IP + "TS/teacher/api.php?getallclass=true&idteacher=" + idTeacher;
     }
 
     //-----
@@ -34,7 +35,7 @@ public class MyUtils {
     public static final String TAG_SUBJECT_NAME = "name";
 
     public static String urlListSubject(int idTeacher, int idClass) {
-        return "http://192.168.11.1/TS/teacher/api.php?getdetailclass=true&idteacher=" + idTeacher + "&idclass=" + idClass;
+        return MY_IP + "TS/teacher/api.php?getdetailclass=true&idteacher=" + idTeacher + "&idclass=" + idClass;
     }
 
     //--------------------------------
@@ -48,7 +49,7 @@ public class MyUtils {
 
 
     public static String urlListAttendences(int idTeacher, int idClass, int idSubject) {
-        return "http://192.168.11.1/TS/teacher/api.php?createlistattendance=true&idclass=" + idClass + "&idteacher=" + idTeacher + "&idsubject=" + idSubject + "&idtiethoc=1";
+        return MY_IP + "TS/teacher/api.php?createlistattendance=true&idclass=" + idClass + "&idteacher=" + idTeacher + "&idsubject=" + idSubject + "&idtiethoc=1";
     }
 
     //--------------------------------
@@ -63,9 +64,8 @@ public class MyUtils {
     public static final String TAG_STUDIENT_IMAGE = "avatar";
 
 
-
     public static String urlListAllStudentOfClass(int idClass) {
-        return "http://192.168.11.1/TS/teacher/api.php?getallstudentinclass=true&idclass=" + idClass;
+        return MY_IP + "TS/teacher/api.php?getallstudentinclass=true&idclass=" + idClass;
     }
 
 

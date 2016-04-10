@@ -29,15 +29,6 @@
             android:paddingRight="@dimen/margin_25"
             android:paddingTop="@dimen/margin_60">
 
-            <TextView
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-                android:hint="username"
-                android:text="Username:"
-                android:textColor="#fff"
-                android:textSize="@dimen/text_size_18" />
-
             <EditText
                 android:id="@+id/editUsername"
                 android:layout_width="match_parent"
@@ -47,14 +38,8 @@
 
                 android:textColorHint="@color/colorBackground" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password:"
-                android:textColor="#fff"
-                android:textSize="@dimen/text_size_18" />
-
             <EditText
+
                 android:id="@+id/editPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,8 +53,8 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/buttonLogin"
-            android:layout_width="@dimen/margin_100"
-            android:layout_height="@dimen/margin_40"
+            android:layout_width="@dimen/margin_130"
+            android:layout_height="@dimen/margin_50"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_30"
             android:text="Login"

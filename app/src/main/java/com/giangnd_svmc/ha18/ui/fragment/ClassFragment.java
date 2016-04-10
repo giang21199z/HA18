@@ -53,12 +53,14 @@ public class ClassFragment extends BaseFragment implements View.OnClickListener 
     private MessageHandler messageHandler;
     private ArrayList<String> listResult;
 
+    public ClassFragment() {
+
+    }
+
     public ClassFragment(Teacher teacher, MyClass myClass) {
         this.teacher = teacher;
         this.myClass = myClass;
         messageHandler = new MessageHandler();
-        MainActivity activity = (MainActivity) getActivity();
-//        activity.setupToolBar(myClass.name);
     }
 
     @Override

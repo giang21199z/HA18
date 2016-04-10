@@ -11,9 +11,12 @@ public class Student {
     public String address;
     public String description;
     private String image;
+    public String phone;
+
     public void setImageStudent(String imageStudent) {
         image = imageStudent;
     }
+
     public String getImageStudent() {
         return "http://192.168.11.1/TS/images/" + image;
     }

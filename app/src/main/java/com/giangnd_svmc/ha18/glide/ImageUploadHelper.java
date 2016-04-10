@@ -57,7 +57,7 @@ public class ImageUploadHelper {
 
     public void uploadImage(final Bitmap bitmap) {
         //Showing the progress dialog
-        final ProgressDialog loading = ProgressDialog.show(context, "Uploading...", "Please wait...", false, false);
+        final ProgressDialog loading = ProgressDialog.show(context, "Processing...", "Please wait...", false, false);
         String encodedImage = getStringImage(bitmap);
 
         RequestBody requestBody = new FormBody.Builder().add(KEY_IMAGE, encodedImage).build();

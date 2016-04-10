@@ -1,5 +1,6 @@
 package com.giangnd_svmc.ha18.ui.fragment;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.widget.CardView;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.giangnd_svmc.ha18.R;
 import com.giangnd_svmc.ha18.app.BaseActivity;
+import com.giangnd_svmc.ha18.app.BaseFragment;
 import com.giangnd_svmc.ha18.app.BasePage;
 import com.giangnd_svmc.ha18.entity.Attendences;
 import com.giangnd_svmc.ha18.entity.JsonParser;
@@ -26,6 +28,7 @@ import com.giangnd_svmc.ha18.entity.Student;
 import com.giangnd_svmc.ha18.entity.Subject;
 import com.giangnd_svmc.ha18.entity.Teacher;
 import com.giangnd_svmc.ha18.glide.GlideCircleTransform;
+import com.giangnd_svmc.ha18.ui.activity.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,8 +75,11 @@ public class ListStudentPage extends BasePage implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        InfoStudentFragment infoStudentFragment = new InfoStudentFragment(listStudent.get(position));
+        activity.replaceFragment(infoStudentFragment, infoStudentFragment.getTag(), infoStudentFragment.getTag());
 
     }
+
 
     class LoadAttendences extends AsyncTask {
         JSONObject jsonObject;
@@ -110,6 +116,7 @@ public class ListStudentPage extends BasePage implements AdapterView.OnItemClick
                             student.code = jsonObject.getString(MyUtils.TAG_STUDIENT_CODE);
                             student.birthDay = jsonObject.getString(MyUtils.TAG_STUDIENT_BIRTHDAY);
                             student.address = jsonObject.getString(MyUtils.TAG_STUDIENT_ADDRESS);
+                            student.phone = jsonObject.getString(MyUtils.TAG_STUDIENT_PHONE);
                             student.description = jsonObject.getString(MyUtils.TAG_STUDIENT_DESCRIPTION);
                             student.setImageStudent(jsonObject.getString(MyUtils.TAG_STUDIENT_IMAGE));
                             listStudent.add(student);

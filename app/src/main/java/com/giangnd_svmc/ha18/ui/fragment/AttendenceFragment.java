@@ -116,10 +116,9 @@ public class AttendenceFragment extends BaseFragment {
                         for (int i = 0; i < listAttendences.size(); i++) {
                             listAttendences.get(i).status = 0;
                             for (int j = 0; j < listResult.size(); j++) {
-                                Log.e("TAG", listResult.get(j), null);
+                                Log.d("FOO",listResult.get(j));
                                 if ((String.valueOf(listAttendences.get(i).student_id).equals(listResult.get(j)))) {
                                     listAttendences.get(i).status = 1;
-                                    Log.d("FOO",listResult.get(j));
                                 }
                             }
                         }

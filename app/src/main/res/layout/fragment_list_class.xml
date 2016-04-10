@@ -8,6 +8,8 @@
         android:layout_height="match_parent">
 
         <GridView
+            android:paddingLeft="@dimen/margin_2"
+            android:paddingRight="@dimen/margin_2"
             android:id="@+id/gridView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -15,7 +17,7 @@
             android:divider="@null"
             android:fadeScrollbars="true"
             android:gravity="center"
-            android:horizontalSpacing="@dimen/margin_3"
+            android:horizontalSpacing="@dimen/margin_2"
             android:listSelector="@android:color/transparent"
             android:numColumns="2"
             android:scrollbarSize="@dimen/margin_2"
