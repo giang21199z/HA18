@@ -52,11 +52,10 @@ public class InfoStudentFragment extends BaseFragment {
         tvDescription.setText(student.description);
         tvPhone.setText(student.phone);
 
-
-        Glide.with(getActivity())
+        Glide.with(getActivity().getBaseContext())
                 .load(student.getImageStudent())
                 .centerCrop()
-                .transform(new GlideCircleTransform(getActivity()))
+                .transform(new GlideCircleTransform(getActivity().getBaseContext()))
                 .error(R.drawable.account)
                 .into(imageStudent);
     }
